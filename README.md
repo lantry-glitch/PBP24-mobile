@@ -5,21 +5,21 @@ Stateless Widget adalah widget yang tidak memiliki status internal atau data yan
 Stateful Widget adalah widget yang memiliki status atau data yang dapat diperbarui saat aplikasi berjalan. Ini memungkinkan tampilan widget tersebut untuk berubah ketika ada perubahan data atau interaksi pengguna. Stateful widget sering digunakan untuk elemen yang memerlukan interaksi atau perubahan, seperti `Slider`, `TextField`, dan `Checkbox`. Perbedaan utama di antara keduanya adalah bahwa stateless widget selalu tetap sama setelah dirender, sementara stateful widget dapat memperbarui tampilannya sesuai perubahan status atau data.
 #### Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
 Berikut adalah widget yang digunakan dalam proyek ini beserta fungsinya:
--Text: Digunakan untuk menampilkan teks pada layar.
--Column: Menyusun widget anak secara vertikal, sehingga tampilan widget dapat diatur berurutan dari atas ke bawah.
--Center: Memposisikan widget anak di tengah dari widget induknya.
--Icon: Menampilkan ikon dari pustaka ikon bawaan Flutter, yang sering digunakan untuk menambahkan simbol visual.
--Container: Widget serbaguna yang dapat digunakan untuk mengatur tata letak, ukuran, padding, dan dekorasi dari widget lainnya.
--Padding: Menambahkan ruang di sekitar widget anak untuk memberikan jarak antar elemen.
--Scaffold: Memberikan kerangka dasar untuk halaman, termasuk struktur AppBar dan body.
--AppBar: Menyediakan bagian atas halaman untuk menampilkan judul aplikasi atau elemen kontrol lainnya.
--Card: Menyediakan kotak dengan efek bayangan untuk menampilkan konten dengan lebih menarik dan rapi.
--SnackBar: Menampilkan pesan singkat di bagian bawah layar sebagai notifikasi sementara yang memberi umpan balik kepada pengguna.
--MediaQuery: Menyediakan informasi tentang ukuran layar dan orientasi, yang berguna untuk menyesuaikan tampilan sesuai perangkat.
--InfoCard: Kartu informasi khusus yang menampilkan judul dan konten tertentu untuk keperluan tampilan informasi.
--StatelessWidget: Widget yang tidak memiliki status internal dan hanya perlu dirender sekali.
--List: Digunakan untuk menyimpan kumpulan item atau data yang akan ditampilkan dalam aplikasi.
--ItemHomepage: Kelas khusus yang berfungsi untuk menyimpan informasi item pada halaman utama aplikasi, seperti nama dan ikon untuk setiap item.
+- Text: Digunakan untuk menampilkan teks pada layar.
+- Column: Menyusun widget anak secara vertikal, sehingga tampilan widget dapat diatur berurutan dari atas ke bawah.
+- Center: Memposisikan widget anak di tengah dari widget induknya.
+- Icon: Menampilkan ikon dari pustaka ikon bawaan Flutter, yang sering digunakan untuk menambahkan simbol visual.
+- Container: Widget serbaguna yang dapat digunakan untuk mengatur tata letak, ukuran, padding, dan dekorasi dari widget lainnya.
+- Padding: Menambahkan ruang di sekitar widget anak untuk memberikan jarak antar elemen.
+- Scaffold: Memberikan kerangka dasar untuk halaman, termasuk struktur AppBar dan body.
+- AppBar: Menyediakan bagian atas halaman untuk menampilkan judul aplikasi atau elemen kontrol lainnya.
+- Card: Menyediakan kotak dengan efek bayangan untuk menampilkan konten dengan lebih menarik dan rapi.
+- SnackBar: Menampilkan pesan singkat di bagian bawah layar sebagai notifikasi sementara yang memberi umpan balik kepada pengguna.
+- MediaQuery: Menyediakan informasi tentang ukuran layar dan orientasi, yang berguna untuk menyesuaikan tampilan sesuai perangkat.
+- InfoCard: Kartu informasi khusus yang menampilkan judul dan konten tertentu untuk keperluan tampilan informasi.
+- StatelessWidget: Widget yang tidak memiliki status internal dan hanya perlu dirender sekali.
+- List: Digunakan untuk menyimpan kumpulan item atau data yang akan ditampilkan dalam aplikasi.
+- ItemHomepage: Kelas khusus yang berfungsi untuk menyimpan informasi item pada halaman utama aplikasi, seperti nama dan ikon untuk setiap item.
 
 #### Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
 Fungsi `setState()` digunakan pada Stateful Widget untuk memberi tahu Flutter bahwa terdapat perubahan status atau data dalam widget tersebut. Dengan memanggil `setState()`, Flutter akan mengetahui bahwa tampilan widget perlu diperbarui, dan akan menjalankan ulang metode `build()` pada widget itu untuk menyesuaikan tampilan dengan status terbaru.
