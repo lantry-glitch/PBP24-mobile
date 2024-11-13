@@ -7,10 +7,10 @@ Perbandingan dan Penjelasan Column dan Row di Flutter:
 Column dan Row adalah widget tata letak dasar di Flutter yang digunakan untuk menyusun widget anak secara berurutan. Perbedaan utama antara keduanya adalah arah penyusunan widget.
 
 Column:
--Menyusun widget anak dalam arah vertikal, dari atas ke bawah.
--Widget disusun sesuai urutan penambahan; widget pertama di atas, diikuti oleh widget berikutnya.
--Jika jumlah widget melebihi tinggi layar, dapat ditempatkan dalam SingleChildScrollView untuk di-scroll.
--Contoh penggunaan Column: menyusun daftar item vertikal seperti daftar tugas atau daftar kontak.
+- Menyusun widget anak dalam arah vertikal, dari atas ke bawah.
+- Widget disusun sesuai urutan penambahan; widget pertama di atas, diikuti oleh widget berikutnya.
+- Jika jumlah widget melebihi tinggi layar, dapat ditempatkan dalam SingleChildScrollView untuk di-scroll.
+- Contoh penggunaan Column: menyusun daftar item vertikal seperti daftar tugas atau daftar kontak.
 Contoh Implementasi Column:
 
 ```dart
@@ -24,10 +24,10 @@ Column(
 ```
 
 Row:
--Menyusun widget anak dalam arah horizontal, dari kiri ke kanan.
--Widget ditempatkan sesuai urutan penambahan; widget pertama di kiri, diikuti oleh widget berikutnya.
--Jika jumlah widget melebihi lebar layar, dapat ditempatkan dalam SingleChildScrollView agar dapat di-scroll.
--Contoh penggunaan Row: menyusun elemen horizontal seperti tombol tindakan atau menu navigasi.
+- Menyusun widget anak dalam arah horizontal, dari kiri ke kanan.
+- Widget ditempatkan sesuai urutan penambahan; widget pertama di kiri, diikuti oleh widget berikutnya.
+- Jika jumlah widget melebihi lebar layar, dapat ditempatkan dalam SingleChildScrollView agar dapat di-scroll.
+- Contoh penggunaan Row: menyusun elemen horizontal seperti tombol tindakan atau menu navigasi.
 Contoh Implementasi Row:
 
 ```dart
