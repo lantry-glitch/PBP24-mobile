@@ -1,3 +1,109 @@
+## Tugas 8
+#### 1. Apa kegunaan `const` di Flutter? Jelaskan apa keuntungan ketika menggunakan `const` pada kode Flutter. Kapan sebaiknya kita menggunakan `const`, dan kapan sebaiknya tidak digunakan?
+Di Flutter, kata kunci const digunakan untuk mendeklarasikan variabel yang bersifat konstan. Penggunaan const memungkinkan pembuatan widget yang tetap tidak berubah dan tidak memerlukan pembaruan status. Widget yang dideklarasikan dengan const diperlakukan sebagai widget yang sama saat proses rebuild, sehingga Flutter tidak akan menggambar ulang widget tersebut. Hal ini membantu meningkatkan kinerja aplikasi dengan mengurangi waktu yang dibutuhkan untuk me-render ulang widget yang tidak mengalami perubahan.
+
+#### 2. Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+Perbandingan dan Penjelasan Column dan Row di Flutter:
+Column dan Row adalah widget tata letak dasar di Flutter yang digunakan untuk menyusun widget anak secara berurutan. Perbedaan utama antara keduanya adalah arah penyusunan widget.
+
+Column:
+- Menyusun widget anak dalam arah vertikal, dari atas ke bawah.
+- Widget disusun sesuai urutan penambahan; widget pertama di atas, diikuti oleh widget berikutnya.
+- Jika jumlah widget melebihi tinggi layar, dapat ditempatkan dalam SingleChildScrollView untuk di-scroll.
+- Contoh penggunaan Column: menyusun daftar item vertikal seperti daftar tugas atau daftar kontak.
+Contoh Implementasi Column:
+
+```dart
+Column(
+  children: <Widget>[
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+)
+```
+
+Row:
+- Menyusun widget anak dalam arah horizontal, dari kiri ke kanan.
+- Widget ditempatkan sesuai urutan penambahan; widget pertama di kiri, diikuti oleh widget berikutnya.
+- Jika jumlah widget melebihi lebar layar, dapat ditempatkan dalam SingleChildScrollView agar dapat di-scroll.
+- Contoh penggunaan Row: menyusun elemen horizontal seperti tombol tindakan atau menu navigasi.
+Contoh Implementasi Row:
+
+```dart
+Row(
+  children: <Widget>[
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+)
+```
+
+#### 3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+Elemen input yang digunakan pada halaman form:
+Pada halaman form yang saya buat, elemen input yang digunakan meliputi:
+
+TextFormField: berfungsi sebagai input teks yang menerima data dari pengguna.
+ElevatedButton: digunakan sebagai tombol yang dapat ditekan oleh pengguna.
+Form: digunakan untuk mengelompokkan elemen-elemen input agar menjadi satu kesatuan form.
+SingleChildScrollView: dipakai untuk memungkinkan tata letak di-scroll jika elemen input melebihi tinggi layar.
+AlertDialog: digunakan untuk menampilkan kotak dialog konfirmasi setelah form dikirimkan.
+Apakah ada elemen input Flutter lain yang tidak digunakan dalam tugas ini?
+Ya, terdapat beberapa elemen input Flutter yang tidak digunakan, seperti Checkbox, Radio, DropdownButton, dan Slider, yang bisa digunakan untuk interaksi yang lebih spesifik.
+
+#### 4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Untuk menjaga konsistensi tema dalam aplikasi Flutter, saya menggunakan ThemeData di dalam MaterialApp. ThemeData memungkinkan pengaturan warna, tipografi, dan gaya yang digunakan secara global dalam aplikasi, sehingga tampilan aplikasi tetap seragam.
+
+Contoh penerapan tema dengan ThemeData:
+
+
+```dart
+MaterialApp(
+      title: 'Parking',
+      theme: ThemeData(
+        colorScheme: const ColorScheme(
+          brightness: Brightness.light,
+          primary: Colors.black,
+          onPrimary: Colors.white,
+          secondary: Colors.grey,
+          onSecondary: Colors.white,
+          background: Colors.white,
+          onBackground: Colors.black,
+          surface: Colors.grey,
+          onSurface: Colors.black,
+          error: Colors.red,
+          onError: Colors.white,
+        ),
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.white,
+        ),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.black),
+          bodyMedium: TextStyle(color: Colors.black),
+          bodySmall: TextStyle(color: Colors.black),
+        ),
+      ),
+      home: MyHomePage(),
+    );
+```
+
+#### 5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+Navigasi antar halaman dalam aplikasi Flutter dapat dikelola dengan menggunakan Navigator dan Route. Navigator berfungsi untuk mengatur tumpukan halaman (routes), sedangkan Route menentukan halaman mana yang akan ditampilkan. Berikut contoh penggunaan Navigator untuk berpindah ke halaman lain:
+
+Contoh navigasi dengan Navigator:
+
+```dart
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => SecondPage()),
+);
+```
+Dengan pendekatan ini, aplikasi dapat berpindah antara halaman secara efektif dan terstruktur.
+
+
 ## Tugas 7
 #### 1. Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
 Stateless Widget adalah widget yang tidak memiliki status internal atau data yang dapat berubah setelah pertama kali dibangun. Tampilan stateless widget akan tetap sama dan tidak terpengaruh oleh perubahan status atau interaksi pengguna. Contoh dari stateless widget adalah `Container`, `Icon`, dan `Text`, yang biasanya digunakan untuk elemen UI yang bersifat statis.
