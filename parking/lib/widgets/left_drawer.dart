@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking/screens/list_parkentry.dart';
 import 'package:parking/screens/menu.dart';
 import 'package:parking/screens/parkentry_form.dart';
 
@@ -58,7 +59,7 @@ class LeftDrawer extends StatelessWidget {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => ParkEntryFormPage(),
+            builder: (context) => ParkEntryPage(),
           ));
       /*
       TODO: Buatlah routing ke ParkEntryFormPage di sini,

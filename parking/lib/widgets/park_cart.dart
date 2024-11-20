@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking/screens/list_parkentry.dart';
 import 'package:parking/screens/menu.dart';
 import 'package:parking/screens/parkentry_form.dart';
 
@@ -41,6 +42,13 @@ class ItemCard extends StatelessWidget {
                   builder: (context) => const ParkEntryFormPage(),
                 ),
               );
+            }
+            else if (item.name == "Lihat Park") {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => const ParkEntryPage()
+                    ),
+                );
             }
         },
         // Container untuk menyimpan Icon dan Text
