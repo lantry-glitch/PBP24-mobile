@@ -1,3 +1,70 @@
+## Tugas 9
+### 1. Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
+Model diperlukan untuk mendefinisikan struktur data dalam proses pengambilan dan pengiriman JSON. Dengan adanya model, kita dapat melakukan validasi data secara menyeluruh, memastikan format dan tipe data sesuai ekspektasi. Ini membantu mencegah kesalahan akibat data tidak valid, menghindari bug, serta menjaga konsistensi data. Model juga meningkatkan keamanan dengan menyaring data berbahaya. Jika model tidak digunakan, aplikasi tetap dapat berjalan, namun risiko kesalahan seperti data yang tidak terproses dengan benar akan lebih tinggi. Oleh karena itu, model menjadi kunci dalam memastikan keandalan dan keamanan aplikasi.
+
+### 2. Jelaskan fungsi dari library `http` yang sudah kamu implementasikan pada tugas ini
+Library http adalah bagian dari dependency pbp_django_auth. Fungsinya adalah mendukung aplikasi untuk mengirim dan menerima data melalui protokol HTTP, seperti menggunakan metode GET, POST, atau DELETE. Dalam konteks proyek ini, library http digunakan untuk:
+- Mengambil data dari server Django.
+- Mengirimkan data pengguna atau produk baru.
+- Menangani proses autentikasi.
+
+
+### 3. Jelaskan fungsi dari `CookieRequest` dan jelaskan mengapa *instance* `CookieRequest` perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+`CookieRequest` adalah kelas yang menangani pengelolaan sesi HTTP menggunakan cookies. Ini memungkinkan aplikasi:
+
+Menyimpan cookies agar sesi pengguna tetap terautentikasi.
+Mengelola permintaan HTTP dengan menyertakan cookies secara otomatis.
+Berbagi instance `CookieRequest` ke seluruh komponen aplikasi memastikan konsistensi status autentikasi. Tanpa berbagi instance ini, setiap komponen dapat bekerja dengan sesi berbeda, menyebabkan pengalaman pengguna terganggu, seperti kehilangan data atau harus masuk ulang.
+
+### 4. Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
+Proses pengiriman data berjalan sebagai berikut:
+- Input: Pengguna mengisi form pada aplikasi Flutter.
+- Validasi: Flutter memvalidasi data secara lokal.
+- Pengiriman: Data dikirim ke server Django dalam format JSON menggunakan permintaan HTTP.
+- Pemrosesan di Server: Django memvalidasi ulang data, menjalankan operasi pada database, dan mengelola autentikasi.
+- Respons: Django mengirimkan respons JSON.
+- Tampilan: Flutter memproses respons dan menampilkan hasil kepada pengguna.
+
+### 5. Jelaskan mekanisme autentikasi dari *login*, *register*, hingga *logout*. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+A. Registrasi
+Pengguna memasukkan detail akun di Flutter.
+Data dikirim ke server Django menggunakan metode POST.
+Django memvalidasi data, memeriksa duplikasi username, dan menyimpan akun baru jika valid.
+Respons keberhasilan atau kesalahan dikirim ke Flutter untuk ditampilkan.
+B. Login
+Pengguna mengisi username dan password di Flutter.
+Flutter mengirim data ke Django untuk diverifikasi.
+Jika valid, Django mengirimkan session cookie untuk autentikasi.
+Flutter menampilkan menu utama kepada pengguna.
+C. Logout
+Flutter mengirim permintaan ke Django untuk menghapus session cookie.
+Django menghapus sesi pengguna.
+Flutter mengarahkan kembali ke halaman login.
+
+
+
+### 6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+1. Pembuatan Aplikasi Django:
+Membuat aplikasi authentication dengan fitur login, logout, dan registrasi.
+Menyesuaikan settings.py untuk mendukung CORS.
+
+2. Integrasi dengan Flutter:
+Menambahkan paket provider dan pbp_django_auth.
+Membuat instance CookieRequest di Flutter untuk menjaga sesi autentikasi.
+
+3. Pengembangan Fitur Autentikasi:
+Membuat tampilan form login dan registrasi di Flutter dengan validasi lokal.
+Menghubungkan form tersebut dengan endpoint Django.
+
+4. Pengelolaan Data Produk:
+Membuat model SkinEntry di Django dan Flutter.
+Menyediakan endpoint untuk CRUD data produk di Django.
+Menampilkan daftar produk di Flutter dengan filter untuk pengguna yang sedang login.
+
+5. Fitur Tambahan:
+Menambahkan form Add Product di Flutter yang terhubung dengan endpoint POST di Django.
+Menyediakan tombol logout di aplikasi Flutter untuk menghapus sesi pengguna.
+
 ## Tugas 8
 #### 1. Apa kegunaan `const` di Flutter? Jelaskan apa keuntungan ketika menggunakan `const` pada kode Flutter. Kapan sebaiknya kita menggunakan `const`, dan kapan sebaiknya tidak digunakan?
 Di Flutter, kata kunci const digunakan untuk mendeklarasikan variabel yang bersifat konstan. Penggunaan const memungkinkan pembuatan widget yang tetap tidak berubah dan tidak memerlukan pembaruan status. Widget yang dideklarasikan dengan const diperlakukan sebagai widget yang sama saat proses rebuild, sehingga Flutter tidak akan menggambar ulang widget tersebut. Hal ini membantu meningkatkan kinerja aplikasi dengan mengurangi waktu yang dibutuhkan untuk me-render ulang widget yang tidak mengalami perubahan.
